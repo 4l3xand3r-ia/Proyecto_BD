@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+ </head>
+
+<!-- Formulario para registrar medicamentos (solo admin y medico) -->
+<h2>Registrar Medicamento</h2>
+<form action="/Medicamentos" method="POST">
+    <h2>Registro de Medicamento</h2>
+    
+    <label for="nombre">Nombre del medicamento:</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Ejemplo: Paracetamol" required>
+    <br>
+  
+    <label for="categoria">Categoría:</label>
+    <input type="text" id="categoria" name="categoria" placeholder="Ejemplo: Analgésico" required>
+    <br>
+  
+    <label for="cantidad_total">Cantidad Total:</label>
+    <input type="number" id="cantidad_total" name="cantidad_total" placeholder="Ejemplo: 100" min="1" required>
+    <br>
+  
+    <label for="unidad">Unidad:</label>
+    <input type="text" id="unidad" name="unidad" placeholder="Ejemplo: Tabletas, ml, g" required>
+    <br>
+  
+    <label for="ubicacion">Ubicación:</label>
+    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ejemplo: Estante A1" required>
+    <br>
+  
+    <label for="estado">Estado:</label>
+    <select id="estado" name="estado" required>
+      <option value="disponible">Disponible</option>
+      <option value="agotado">Agotado</option>
+      <option value="dañado">Dañado</option>
+    </select>
+    <br>
+  
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" name="descripcion" rows="3" placeholder="Detalles adicionales del medicamento..."></textarea>
+    <br>
+  
+    <button type="submit">Guardar Medicamento</button>
+  </form>
+  
+  <h2>Actualizar medicamento</h2>
+<form action="/actualizar_medicamento" method="POST">
+  <label for="nombre">Nombre del medicamento:</label>
+  <input type="text" id="nombre" name="nombre">
+  
+  <label for="cantidad_total">Cantidad total:</label>
+  <input type="text" id="cantidad_total" name="cantidad_total">
+
+  <button type="submit">Guardar</button>
+</form>
+
+<h2>Eliminar medicamento</h2>
+<form action="/eliminar_medicamento" method="POST">
+  <label for="nombre">Nombre del medicamento a eliminar:</label>
+  <input type="text" id="nombre" name="nombre" required>
+  
+  <button type="submit">Eliminar medicamento</button>
+</form>

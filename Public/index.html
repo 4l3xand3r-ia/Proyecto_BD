@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Gestión de Medicamentos</title>
+</head>
+<body>
+
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <script src="navbar.html"></script>
+</body>
+</html>
+  <header>
+    <h1>Bienvenido a la Gestión de Medicamentos</h1>
+    <div id="navbar">
+  </header>
+
+  <!-- Navbar -->
+  <div id="navbar">
+    <ul id="menu"></ul>
+  </div>
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Inventario</title>
+    <link rel="stylesheet" href="styles.css"> 
+  </head>
+  <body>
+  
+
+  </body>
+  </html>
+
+<script>
+  // Insertar el contenido de navbar.html en el elemento con id "navbar"
+  fetch('/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => console.error('Error cargando el navbar:', error));
+
+  // Solicitar el tipo de usuario y ajustar el menú en función de este
+  fetch('/tipo-usuario')
+      .then(response => response.json())
+      .then(data => {
+          const menu = document.getElementById('menu');
+          const tipoUsuario = data.tipo_usuario;
+
+          // Agregar opciones de menú según el tipo de usuario
+        // Solo mostrar opciones para "admin" y "farmaceutico"
+        if (tipoUsuario === 'admin') {
+          menu.innerHTML += '<li><a href="gestionar-medicamentos.html">Gestionar Medicamentos</a></li>';
+          menu.innerHTML += '<li><a href="/Medicamentos">Ver Medicamentos</a></li>';
+          menu.innerHTML += '<li><a href="descargar_medicamentos.html">Descargar Medicamentos</a></li>';
+          menu.innerHTML += '<li><a href="buscar_medicamento.html">Buscar Medicamentos</a></li>';
+        } else if (tipoUsuario === 'farmaceutico') {
+          menu.innerHTML += '<li><a href="/Medicamentos">Ver Medicamentos</a></li>';
+          menu.innerHTML += '<li><a href="descargar_medicamentos.html">Descargar Medicamentos</a></li>';
+          menu.innerHTML += '<li><a href="buscar_medicamento.html">Buscar Medicamentos</a></li>';
+        } 
+          // Opción de cerrar sesión para todos los tipos de usuario
+          menu.innerHTML += '<li><a href="/logout">Cerrar Sesión</a></li>';
+      })
+      .catch(error => console.error('Error obteniendo el tipo de usuario:', error));
+</script>
+
+  <main>
+    <p>Esta es una página para gestionar los medicamentos registrados en el sistema.</p>
+
+    
+    <style>
+      .centrar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
+    
+    <div class="centrar">
+        <img id="imagen-cancion" src="farmatec.png" alt="Descripción de la imagen" class="img-fluid rounded mt-4" style="cursor: pointer;">
+    </div>
+    
+  
+    
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="excelFile" accept=".xlsx" />
+      <button type="submit">Subir Medicamentos</button>
+    </form>
+
+    <!-- Botón para ordenar medicamentos -->
+    <button onclick="window.location.href='/Medicamento/cantidad'">Ordenar Medicamentos por Cantidad</button>
+

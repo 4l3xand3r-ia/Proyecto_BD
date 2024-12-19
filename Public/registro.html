@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Usuario</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      color: #98b9a8; /* Lavanda claro */
+    }
+    label {
+      margin-top: 10px;
+      display: block;
+      color: #666;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #96d284; /* Verde menta suave */
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #98b9a8; /* Verde menta */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #8ca1c2; /* Lavanda claro */
+    }
+    p {
+      text-align: center;
+      color: #666;
+    }
+    a {
+      color: #98b9a8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registro de Usuario</h2>
+    <form action="/registrar" method="POST">
+      <label for="nombre_usuario">Nombre de Usuario:</label>
+      <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+      <label for="password_hash">Contraseña:</label>
+      <input type="password" id="password_hash" name="password_hash" required>
+      <label for="codigo_acceso">Código de acceso:</label>
+      <input type="text" id="codigo_acceso" name="codigo_acceso" required>
+      <button type="submit">Registrarse</button>
+    </form>
+    <p>¿Ya tienes cuenta? <a href="/login.html">Inicia sesión</a></p>
+  </div>
+</body>
+</html>
+

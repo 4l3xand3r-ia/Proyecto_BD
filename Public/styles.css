@@ -1,0 +1,165 @@
+/* Estilo para el contenedor de la barra de navegación */
+nav {
+  background-color: #58929e; /* Verde menta */
+  color: white;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Estilo para los enlaces del menú */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-right: 30px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+  background-color: #416533; /* Lavanda claro */
+  border-radius: 4px;
+  transform: translateY(-2px);
+}
+
+/* Estilo para el cuerpo */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Estilo para el título */
+h1 {
+  color: #000000; /* Lavanda claro */
+  text-align: center;
+  font-size: 32px;
+  margin-top: 40px;
+}
+
+/* Estilo para formularios */
+form {
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #bcd46e;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  background-color: #98b9a8; /* Verde menta */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #98b9a8; /* Lavanda claro */
+  transform: translateY(-2px);
+}
+
+/* Estilo para las tablas */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #6eac52; /* Lavanda claro */
+  color: white;
+  font-size: 18px;
+}
+
+tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+caption {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Estilo para el botón de logout */
+.logout-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #5e7546; /* Gris lavanda suave */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #7c914e; /* Lavanda suave */
+}
+
+/* Estilo para los botones en las celdas de la tabla */
+td button {
+  background-color: #08380c; /* Lavanda oscuro */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+td button:hover {
+  background-color: #08380c; /* Lavanda más claro */
+}

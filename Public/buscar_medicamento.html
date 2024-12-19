@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda de Medicamentos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Contenido principal -->
+  <h1>Búsqueda de Medicamentos</h1>
+  <input type="text" id="search" placeholder="Buscar medicamento por nombre o categoría..." />
+  <ul id="results"></ul>
+
+  <!-- Script para cargar la barra de navegación -->
+  <script src="navbar.html"></script>
+
+  <!-- Script de búsqueda en tiempo real -->
+  <script>
+    document.getElementById('search').addEventListener('keyup', function() {
+      const query = this.value.trim();
+
+      // Evita realizar búsquedas vacías
+      if (query === '') {
+        document.getElementById('results').innerHTML = '';
+        return;
+      }
+
+      // Realiza la búsqueda en tiempo real
+      fetch(`/buscar-medicamentos?query=${query}`)
+        .then(res => res.json())
+        .then(data => {
+          const results = document.getElementById('results');
+          results.innerHTML = ''; // Limpia resultados anteriores
+
+          if (data.length === 0) {
+            results.innerHTML = '<li>No se encontraron medicamentos.</li>';
+            return;
+          }
+
+          // Renderiza los resultados de búsqueda
+          data.forEach(medicamento => {
+            const li = document.createElement('li');
+            li.textContent = `Nombre: ${medicamento.nombre} | Categoría: ${medicamento.categoria} | Cantidad: ${medicamento.cantidad_total}`;
+            results.appendChild(li);
+          });
+        })
+        .catch(err => console.error('Error en la búsqueda:', err));
+    });
+  </script>
+</body>
+</html>
